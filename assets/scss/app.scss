@@ -1,0 +1,232 @@
+@import "font";
+
+@import "mixin";
+
+body {
+  padding: 0;
+  margin: 0;
+  font-family: Inter, sans-serif;
+}
+
+.size {
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+.section-header {
+  &--title {
+    color: #000;
+    text-align: center;
+    font-family: Inter, sans-serif;
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+  }
+
+  &--line {
+    margin: 0 auto;
+    width: 1240px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 17px!important;
+    .line {
+      width: calc((100% - 190px)/2);
+      height: 1px;
+      background: #89887F80;
+    }
+
+    .line-center {
+      width: 190px;
+      background: #009E9C;
+    }
+  }
+
+  &--btn {
+    text-align: center;
+    margin-top: 43px;
+  }
+}
+
+.breadcrumb-area {
+  width: 1240px;
+  margin: 0 auto;
+  margin-top: 23px!important;
+  nav {
+
+    .breadcrumb {
+      --breadcrumb-divider: "〉";
+      --breadcrumb-divider-color: black;
+      --breadcrumb-color: black;
+      --breadcrumb-active-color: black;
+      display: flex;
+      margin: 0;
+      padding: 0;
+      list-style-type: none;
+
+      li {
+        a {
+          color: #000;
+          text-align: center;
+          font-family: Inter, sans-serif;
+          font-size: 14px;
+          font-style: normal;
+          font-weight: 400;
+          line-height: normal;
+          text-decoration: none;
+          &.active {
+            color: #009E9C;
+          }
+        }
+        span {
+          color: #000;
+          text-align: center;
+          font-family: Inter, sans-serif;
+          font-size: 14px;
+          font-style: normal;
+          font-weight: 400;
+          line-height: normal;
+          &.active {
+            color: #009E9C;
+          }
+        }
+
+        img {
+          width: 100%;
+          vertical-align: unset;
+        }
+
+        &::before {
+          color: black;
+          font-size: 11px;
+          line-height: 2.5;
+          content: ">";
+        }
+
+        &:first-child {
+
+          &::before {
+            content: "";
+          }
+        }
+
+        &:not(:first-child) {
+          padding-left: 10px;
+          padding-right: 0px;
+        }
+      }
+    }
+
+  }
+}
+
+.banner {
+  width: 100%;
+  height: 258px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: 50% 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  &.banner-footer {
+    background-position: 50% 50%;
+    height: 298px;
+  }
+  .section-header {
+    &--title {
+      color: #ffffff;
+    }
+
+  }
+}
+
+.banner-no-bg{
+  margin-top: 80px;
+}
+
+.nichi-btn {
+  border: 1px solid #009E9C;
+  background: #FFF;
+  color: #009E9C;
+  text-align: center;
+  font-family: Inter, sans-serif;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  text-decoration: none;
+  padding: 20px 55px;
+
+  &.btn-fullwidth {
+    width: 100%;
+  }
+
+  &:hover {
+    color: #009E9C;
+  }
+}
+
+.nichi-btn-bg {
+  @extend .nichi-btn;
+  background: #009E9C;
+  color: #fff;
+
+  &:hover {
+    color: #fff;
+  }
+}
+.header-main{
+  background-color: white;
+  padding: 10px;
+  position: fixed;
+  top: 8px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: calc(100% - 16px);
+  max-width: 1264px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 94px;
+  .des-header{
+    font-weight: bold;
+    font-size: 18px;
+    white-space: nowrap;
+  }
+  .phone-header{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .number-phone{
+      color: #F7931E;
+      font-size: 36px;
+      font-weight: bold;
+      white-space: nowrap;
+    }
+    .des-phone{
+      font-size: 16px;
+      white-space: nowrap;
+    }
+  }
+}
+.main-banner{
+  img{
+    width: 100%;
+    object-fit: cover;
+  }
+}
+.menu-middle{
+  background: #F7931E;
+  height: 97px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  .item-menu-middle{
+    color: white;
+    font-size: 18px;
+  }
+}
+
