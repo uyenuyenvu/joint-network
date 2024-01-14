@@ -1,7 +1,9 @@
 @import "font";
 
 @import "mixin";
-
+*, ::after, ::before {
+  box-sizing: border-box;
+}
 body {
   padding: 0;
   margin: 0;
@@ -11,12 +13,19 @@ body {
 
 .size {
   max-width: 1100px;
+  width: calc(100vw - 350px);
 }
 .z-index-large{
   z-index: 999;
 }
 .w-full{
   width: 100%;
+}
+.pc{
+  display: block;
+}
+.tb{
+  display: none;
 }
 .header_{
   position: sticky;
@@ -49,7 +58,6 @@ body {
       }
     }
   }
-
 }
 .main-banner{
   img{
@@ -68,6 +76,9 @@ body {
     font-size: 18px;
     margin: 0 20px;
     white-space: nowrap;
+    &:last-of-type{
+      display: none;
+    }
     a{
       color: white;
       text-decoration: none;
@@ -346,8 +357,9 @@ body {
     border-top: 2px solid #C5C5C5;
     .item-faq{
       text-align: left;
-      padding-top: 30px;
       font-size: 16px;
+      padding-top: 30px;
+      padding-bottom: 10px;
       letter-spacing: 3px;
       border-bottom: 2px solid #C5C5C5;
       .faq_a{
@@ -382,6 +394,9 @@ body {
       display: flex;
       justify-content: center;
       align-items: start;
+      img{
+        max-width: calc(20vw - 10px);
+      }
     }
   }
   .fee{
@@ -497,8 +512,9 @@ body {
       left: 0;
     }
     .contact-main{
-      padding: 55px 20px;
+      padding: 35px 20px;
       letter-spacing: 2px;
+      width: 350px;
       .title-wrap{
         width: 100%;
         text-align: center;
@@ -506,7 +522,8 @@ body {
       }
       .form-contact{
         overflow-y: auto;
-        height: calc(100vh - 190px);
+        overflow-x: hidden;
+        height: calc(100vh - 155px);
 
         &::-webkit-scrollbar {
           width: 3px;
@@ -531,7 +548,6 @@ body {
           margin-bottom: 15px;
           .lable-input{
             font-size: 14px;
-            margin-bottom: 5px;
             font-weight: bold;
           }
           .input{
@@ -557,7 +573,7 @@ body {
             flex-wrap: wrap;
             .radio-input{
               width: 50%;
-              margin-top: 15px;
+              margin-top: 7px;
               span{
                 font-size: 13px;
                 letter-spacing: 0;
@@ -591,7 +607,7 @@ body {
             display: flex;
             justify-content: space-between;
             .radio-input{
-              margin-top: 15px;
+              margin-top: 7px;
               span{
                 font-size: 13px;
                 letter-spacing: 0;
@@ -626,7 +642,7 @@ body {
           margin-bottom: 15px;
           .lable-input {
             font-size: 14px;
-            margin-bottom: 15px;
+            margin-bottom: 5px;
             font-weight: bold;
           }
           .input{
@@ -664,8 +680,52 @@ body {
 
 
 @media screen and (min-height: 600px) and (max-width: 1024px){
+  .contact{
+    width: auto;
+    height: max-content;
+    position: relative;
+    .contact-wrap{
+      .trig-top{
+        border-right: 100vw solid transparent;
+      }
+      .trig-bot{
+        border-left: 100vw solid transparent;
+      }
+    }
+    .contact-main{
+      padding: 60px 100px!important;
+      width: auto!important;
+      .form-contact{
+        height: auto!important;
+        .item-radio{
+          .radios_1{
+            .radio-input{
+              width: 33.333% !important;
+            }
+          }
+          .radios_2{
+            .radio-input{
+              width: 33.333% !important;
+            }
+          }
+        }
+      }
+    }
+  }
+  .wrap{
+    display: unset;
+  }
+  .menu-middle{
+    .item-menu-middle{
+      font-size: 15px;
+      margin: 0 10px;
+      &:last-of-type{
+        display: block;
+      }
+    }
+  }
   .footer{
-    padding: 40px 100px 20px 100px;
+    padding: 40px 50px 20px 50px;
     .footer-top{
       .content-footer{
         table{
@@ -773,10 +833,10 @@ body {
           label{
             height: 35px;
             margin-top: 5px;
-              .title-item{
-                font-size: 13px;
-                letter-spacing: 2px;
-              }
+            .title-item{
+              font-size: 13px;
+              letter-spacing: 2px;
+            }
             img{
               width: 18px;
             }
@@ -814,6 +874,46 @@ body {
         padding-top: 15px;
         font-size: 10px;
         letter-spacing: 1.5px;
+      }
+    }
+  }
+  .step{
+    .step-container{
+      padding: 20px;
+      border-radius: 0 30px 30px 0;
+      .title{
+        margin: 0 auto 40px auto;
+        font-size: 20px;
+      }
+    }
+    .fee{
+      padding: 70px 10px;
+      .title{
+        image{
+          max-width: 50vw;
+        }
+      }
+      .fee-content{
+        .fee-text{
+          .item-text{
+            .label{
+              .main-text{
+                font-size: 20px;
+              }
+              .label-text{
+                font-size: 14px;
+                letter-spacing: 2px;
+              }
+            }
+            .des{
+              font-size: 11px;
+              letter-spacing: 1px;
+            }
+          }
+        }
+      }
+      .applicable{
+        font-size: 10px;
       }
     }
   }
@@ -858,7 +958,62 @@ body {
       font-size: 11px;
     }
   }
-      .layer1{
-        transform: translateY(-2px);
+  .layer1{
+    transform: translateY(-2px);
+  }
+  .contact{
+    .contact-wrap{
+      .contact-main{
+        padding: 60px 50px!important;
+        .form-contact{
+          .item-input{
+            .lable-input{
+              font-size: 12px;
+            }
+          }
+          .item-radio{
+            .lable-input{
+              font-size: 12px;
+            }
+            .radios_1{
+              .radio-input{
+                input{
+                  width: 13px;
+                  height: 13px;
+                  margin-right: 0;
+                }
+                span{
+                  font-size: 11px;
+                }
+              }
+            }
+            .radios_2 {
+              .radio-input {
+                input {
+                  width: 13px;
+                  height: 13px;
+                  margin-right: 0;
+                }
+
+                span {
+                  font-size: 11px;
+                }
+              }
+            }
+          }
+        }
+      }
     }
+  }
+}
+@media all and (max-width: 1025px){
+  .pc{
+    display: none;
+  }
+  .tb{
+    display: block;
+  }
+  .size{
+    width: auto;
+  }
 }

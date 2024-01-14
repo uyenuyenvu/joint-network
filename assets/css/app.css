@@ -1,5 +1,9 @@
 @charset "UTF-8";
 @import "https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap";
+*, ::after, ::before {
+  box-sizing: border-box;
+}
+
 body {
   padding: 0;
   margin: 0;
@@ -9,6 +13,7 @@ body {
 
 .size {
   max-width: 1100px;
+  width: calc(100vw - 350px);
 }
 
 .z-index-large {
@@ -17,6 +22,14 @@ body {
 
 .w-full {
   width: 100%;
+}
+
+.pc {
+  display: block;
+}
+
+.tb {
+  display: none;
 }
 
 .header_ {
@@ -69,6 +82,9 @@ body {
   font-size: 18px;
   margin: 0 20px;
   white-space: nowrap;
+}
+.menu-middle .item-menu-middle:last-of-type {
+  display: none;
 }
 .menu-middle .item-menu-middle a {
   color: white;
@@ -347,8 +363,9 @@ body {
 }
 .faq .list-faq .item-faq {
   text-align: left;
-  padding-top: 30px;
   font-size: 16px;
+  padding-top: 30px;
+  padding-bottom: 10px;
   letter-spacing: 3px;
   border-bottom: 2px solid #C5C5C5;
 }
@@ -383,6 +400,9 @@ body {
   display: flex;
   justify-content: center;
   align-items: start;
+}
+.step .step-container .list-step img {
+  max-width: calc(20vw - 10px);
 }
 .step .fee {
   padding: 70px 20px;
@@ -491,8 +511,9 @@ body {
   left: 0;
 }
 .contact .contact-wrap .contact-main {
-  padding: 55px 20px;
+  padding: 35px 20px;
   letter-spacing: 2px;
+  width: 350px;
 }
 .contact .contact-wrap .contact-main .title-wrap {
   width: 100%;
@@ -501,7 +522,8 @@ body {
 }
 .contact .contact-wrap .contact-main .form-contact {
   overflow-y: auto;
-  height: calc(100vh - 190px);
+  overflow-x: hidden;
+  height: calc(100vh - 155px);
   /* Track */
   /* Handle */
   /* Handle on hover */
@@ -524,7 +546,6 @@ body {
 }
 .contact .contact-wrap .contact-main .form-contact .item-input .lable-input {
   font-size: 14px;
-  margin-bottom: 5px;
   font-weight: bold;
 }
 .contact .contact-wrap .contact-main .form-contact .item-input .input input {
@@ -549,7 +570,7 @@ body {
 }
 .contact .contact-wrap .contact-main .form-contact .item-radio .radios_1 .radio-input {
   width: 50%;
-  margin-top: 15px;
+  margin-top: 7px;
 }
 .contact .contact-wrap .contact-main .form-contact .item-radio .radios_1 .radio-input span {
   font-size: 13px;
@@ -579,7 +600,7 @@ body {
   justify-content: space-between;
 }
 .contact .contact-wrap .contact-main .form-contact .item-radio .radios_2 .radio-input {
-  margin-top: 15px;
+  margin-top: 7px;
 }
 .contact .contact-wrap .contact-main .form-contact .item-radio .radios_2 .radio-input span {
   font-size: 13px;
@@ -609,7 +630,7 @@ body {
 }
 .contact .contact-wrap .contact-main .form-contact .item-area .lable-input {
   font-size: 14px;
-  margin-bottom: 15px;
+  margin-bottom: 5px;
   font-weight: bold;
 }
 .contact .contact-wrap .contact-main .form-contact .item-area .input textarea {
@@ -639,8 +660,42 @@ body {
 }
 
 @media screen and (min-height: 600px) and (max-width: 1024px) {
+  .contact {
+    width: auto;
+    height: max-content;
+    position: relative;
+  }
+  .contact .contact-wrap .trig-top {
+    border-right: 100vw solid transparent;
+  }
+  .contact .contact-wrap .trig-bot {
+    border-left: 100vw solid transparent;
+  }
+  .contact .contact-main {
+    padding: 60px 100px !important;
+    width: auto !important;
+  }
+  .contact .contact-main .form-contact {
+    height: auto !important;
+  }
+  .contact .contact-main .form-contact .item-radio .radios_1 .radio-input {
+    width: 33.333% !important;
+  }
+  .contact .contact-main .form-contact .item-radio .radios_2 .radio-input {
+    width: 33.333% !important;
+  }
+  .wrap {
+    display: unset;
+  }
+  .menu-middle .item-menu-middle {
+    font-size: 15px;
+    margin: 0 10px;
+  }
+  .menu-middle .item-menu-middle:last-of-type {
+    display: block;
+  }
   .footer {
-    padding: 40px 100px 20px 100px;
+    padding: 40px 50px 20px 50px;
   }
   .footer .footer-top .content-footer table tr td:first-of-type {
     padding-right: 20px;
@@ -774,6 +829,34 @@ body {
     font-size: 10px;
     letter-spacing: 1.5px;
   }
+  .step .step-container {
+    padding: 20px;
+    border-radius: 0 30px 30px 0;
+  }
+  .step .step-container .title {
+    margin: 0 auto 40px auto;
+    font-size: 20px;
+  }
+  .step .fee {
+    padding: 70px 10px;
+  }
+  .step .fee .title image {
+    max-width: 50vw;
+  }
+  .step .fee .fee-content .fee-text .item-text .label .main-text {
+    font-size: 20px;
+  }
+  .step .fee .fee-content .fee-text .item-text .label .label-text {
+    font-size: 14px;
+    letter-spacing: 2px;
+  }
+  .step .fee .fee-content .fee-text .item-text .des {
+    font-size: 11px;
+    letter-spacing: 1px;
+  }
+  .step .fee .applicable {
+    font-size: 10px;
+  }
   .footer {
     padding: 40px 10px 20px 10px;
   }
@@ -806,6 +889,42 @@ body {
   }
   .layer1 {
     transform: translateY(-2px);
+  }
+  .contact .contact-wrap .contact-main {
+    padding: 60px 50px !important;
+  }
+  .contact .contact-wrap .contact-main .form-contact .item-input .lable-input {
+    font-size: 12px;
+  }
+  .contact .contact-wrap .contact-main .form-contact .item-radio .lable-input {
+    font-size: 12px;
+  }
+  .contact .contact-wrap .contact-main .form-contact .item-radio .radios_1 .radio-input input {
+    width: 13px;
+    height: 13px;
+    margin-right: 0;
+  }
+  .contact .contact-wrap .contact-main .form-contact .item-radio .radios_1 .radio-input span {
+    font-size: 11px;
+  }
+  .contact .contact-wrap .contact-main .form-contact .item-radio .radios_2 .radio-input input {
+    width: 13px;
+    height: 13px;
+    margin-right: 0;
+  }
+  .contact .contact-wrap .contact-main .form-contact .item-radio .radios_2 .radio-input span {
+    font-size: 11px;
+  }
+}
+@media all and (max-width: 1025px) {
+  .pc {
+    display: none;
+  }
+  .tb {
+    display: block;
+  }
+  .size {
+    width: auto;
   }
 }
 
