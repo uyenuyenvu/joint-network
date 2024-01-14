@@ -403,6 +403,9 @@ body {
     padding: 70px 20px;
     .title{
       text-align: center;
+      img{
+        max-width: calc(100vw - 50px);
+      }
     }
     .fee-content{
       display: flex;
@@ -679,7 +682,7 @@ body {
 }
 
 
-@media screen and (min-height: 600px) and (max-width: 1024px){
+@media screen and (min-height: 600px) and (max-width: 1025px){
   .contact{
     width: auto;
     height: max-content;
@@ -833,6 +836,7 @@ body {
           label{
             height: 35px;
             margin-top: 5px;
+            border-radius: 0 17px 0 0;
             .title-item{
               font-size: 13px;
               letter-spacing: 2px;
@@ -881,6 +885,7 @@ body {
     .step-container{
       padding: 20px;
       border-radius: 0 30px 30px 0;
+      width: calc(100% - 10px);
       .title{
         margin: 0 auto 40px auto;
         font-size: 20px;
@@ -939,7 +944,7 @@ body {
           margin-bottom: 15px;
         }
         .infor{
-          font-size: 10px;
+          font-size: 9px;
           letter-spacing: 1.5px;
           tr{
             td{
@@ -962,10 +967,20 @@ body {
     transform: translateY(-2px);
   }
   .contact{
+    height: auto;
+    width: auto;
     .contact-wrap{
+      .trig-top{
+        border-right: 100vw solid transparent;
+      }
+      .trig-bot{
+        border-left: 100vw solid transparent;
+      }
       .contact-main{
-        padding: 60px 50px!important;
+        padding: 60px 20px!important;
+        width: auto!important;
         .form-contact{
+          height: auto;
           .item-input{
             .lable-input{
               font-size: 12px;
@@ -1006,14 +1021,46 @@ body {
     }
   }
 }
-@media all and (max-width: 1025px){
+
+@media screen and (max-width: 1025px){
   .pc{
     display: none;
   }
   .tb{
     display: block;
+    position: static;
   }
   .size{
     width: auto;
+    max-width: 100vw;
+  }
+}
+
+@media screen and (max-width: 360px) {
+  .footer{
+    .footer-top{
+      display: unset;
+      position: relative;
+      .to-top{
+        position: absolute;
+        right: 20px;
+        top: 10px;
+      }
+    }
+  }
+  .contact{
+    .contact-wrap{
+      .contact-main{
+        .form-contact{
+          .item-radio{
+            .radios_1{
+              .radio-input{
+                width: 50%!important;
+              }
+            }
+          }
+        }
+      }
+    }
   }
 }
