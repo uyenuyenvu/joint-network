@@ -693,7 +693,7 @@ div{
 }
 
 
-@media screen and (min-height: 600px) and (max-width: 1025px){
+@media screen and (min-width: 600px) and (max-width: 1025px){
   .contact{
     width: auto;
     height: max-content;
@@ -910,20 +910,24 @@ div{
         }
       }
       .fee-content{
+        img{
+          width: 35%;
+        }
         .fee-text{
+          width: 65%;
           .item-text{
             .label{
               .main-text{
-                font-size: 20px;
+                font-size: 15px;
               }
               .label-text{
-                font-size: 14px;
-                letter-spacing: 2px;
+                font-size: 11px;
+                letter-spacing: 1px;
               }
             }
             .des{
-              font-size: 11px;
-              letter-spacing: 1px;
+              font-size: 9px;
+              letter-spacing: 0.5px;
             }
           }
         }

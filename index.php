@@ -438,7 +438,7 @@
                         <img src="./assets/images/title-contact.svg" alt="">
                     </div>
                     <div class="form-contact">
-                        <form class="contactForm" method="post" action="sendMail.php">
+                        <form class="contactForm" id="form1" method="post" action="sendMail.php">
                             <div class="item-input">
                                 <div class="lable-input label_name">会社名 *</div>
                                 <div class="input">
@@ -584,7 +584,7 @@
                     <img src="./assets/images/title-contact.svg" alt="">
                 </div>
                 <div class="form-contact">
-                    <form class="contactForm" method="post" action="sendMail.php">
+                    <form class="contactForm" id="form2" method="post" action="sendMail.php">
                         <div class="item-input">
                             <div class="lable-input label_name">会社名 *</div>
                             <div class="input">
@@ -694,17 +694,17 @@
         });
 
         $('.contactForm').submit(function(event) {
-            console.log('ok dume')
             event.preventDefault(); // Prevents the form from submitting by default
+          $('#DynamicValueAssignedHere').find('input[name="FirstName"]').val();
             let flag = true
             // Perform your form validation here using jQuery selectors and conditions
-            var name = $('input[name="name"]').val();
-            var leader = $('input[name="leader"]').val();
-            var email = $('input[name="email"]').val();
-            var phone = $('input[name="phone"]').val();
-            var address = $('input[name="address"]').val();
-            var type_require = $('input[name="type_require"]:checked').val();
-            var type_contact = $('input[name="type_contact"]:checked').val();
+            var name =  $(this).find('input[name="name"]').val();
+            var leader = $(this).find('input[name="leader"]').val();
+            var email = $(this).find('input[name="email"]').val();
+            var phone = $(this).find('input[name="phone"]').val();
+            var address = $(this).find('input[name="address"]').val();
+            var type_require = $(this).find('input[name="type_require"]:checked').val();
+            var type_contact = $(this).find('input[name="type_contact"]:checked').val();
             if (name === '') {
                 $('input[name="name"]').addClass('input-err')
                 $('.label_name').addClass('input-err')
@@ -758,7 +758,7 @@
             $(this).removeClass('input-err')
             const nameInput = $(this).attr('name')
             if (nameInput === 'type_require' || nameInput === 'type_contact'){
-                $('input[name="type_contact"]').removeClass('input-err')
+                $('input[name="'+nameInput+'"]').removeClass('input-err')
             }
              $('.label_'+ nameInput).removeClass('input-err')
         });
