@@ -438,89 +438,91 @@
                         <img src="./assets/images/title-contact.svg" alt="">
                     </div>
                     <div class="form-contact">
-                        <div class="item-input">
-                            <div class="lable-input">会社名 *</div>
-                            <div class="input">
-                                <input type="text" name="name">
-                            </div>
-                        </div>
-                        <div class="item-input">
-                            <div class="lable-input">ご担当者名 *</div>
-                            <div class="input" >
-                                <input type="text" name="leader">
-                            </div>
-                        </div>
-                        <div class="item-input">
-                            <div class="lable-input">メールアドレス *</div>
-                            <div class="input">
-                                <input type="text"  name="email">
-                            </div>
-                        </div>
-                        <div class="item-input">
-                            <div class="lable-input">電話番号 *</div>
-                            <div class="input">
-                                <input type="text" name="phone">
-                            </div>
-                        </div>
-                        <div class="item-input">
-                            <div class="lable-input">住所 *</div>
-                            <div class="input">
-                                <input type="text" name="address" >
-                            </div>
-                        </div>
-                        <div class="item-radio">
-                            <div class="lable-input">お問い合わせ種別 *</div>
-                            <div class="radios_1">
-                                <div class="radio-input">
-                                    <input type="radio" name="type_require" value="1">
-                                    <span>人材派遣（長期）</span>
-                                </div>
-                                <div class="radio-input">
-                                    <input type="radio" name="type_require" value="2">
-                                    <span>人材派遣（短期）</span>
-                                </div>
-                                <div class="radio-input">
-                                    <input type="radio" name="type_require" value="3">
-                                    <span>パートタイム派遣</span>
-                                </div>
-                                <div class="radio-input">
-                                    <input type="radio" name="type_require" value="4">
-                                    <span>シニア派遣</span>
-                                </div>
-                                <div class="radio-input">
-                                    <input type="radio" name="type_require" value="5">
-                                    <span>紹介予定派遣</span>
-                                </div>
-                                <div class="radio-input">
-                                    <input type="radio" name="type_require" value="6">
-                                    <span>人材紹介</span>
+                        <form class="contactForm" method="post" action="sendMail.php">
+                            <div class="item-input">
+                                <div class="lable-input label_name">会社名 *</div>
+                                <div class="input">
+                                    <input type="text" name="name">
                                 </div>
                             </div>
-                        </div>
-                        <div class="item-radio">
-                            <div class="lable-input">ご都合のよいご返信方法 *</div>
-                            <div class="radios_2">
-                                <div class="radio-input">
-                                    <input type="radio" name="type_contact" value="1">
-                                    <span>電話</span>
-                                </div>
-                                <div class="radio-input">
-                                    <input type="radio" name="type_contact" value="2">
-                                    <span>メール</span>
-                                </div>
-                                <div class="radio-input">
-                                    <input type="radio" name="type_contact" value="3">
-                                    <span>どちらでも可</span>
+                            <div class="item-input">
+                                <div class="lable-input label_leader">ご担当者名 *</div>
+                                <div class="input" >
+                                    <input type="text" name="leader" >
                                 </div>
                             </div>
-                        </div>
-                        <div class="item-area">
-                            <div class="lable-input">お問合せ内容詳細(任意)</div>
-                            <div class="input">
-                                <textarea name="content"></textarea>
+                            <div class="item-input">
+                                <div class="lable-input label_email">メールアドレス *</div>
+                                <div class="input">
+                                    <input type="text"  name="email" >
+                                </div>
                             </div>
-                        </div>
-                        <button style="outline: none; border: none" class="button-send send"  type="submit">お問合せ内容の送信</button>
+                            <div class="item-input">
+                                <div class="lable-input label_phone">電話番号 *</div>
+                                <div class="input">
+                                    <input type="text" name="phone" >
+                                </div>
+                            </div>
+                            <div class="item-input">
+                                <div class="lable-input label_address">住所 *</div>
+                                <div class="input">
+                                    <input type="text" name="address" >
+                                </div>
+                            </div>
+                            <div class="item-radio">
+                                <div class="lable-input label_type_require">お問い合わせ種別 *</div>
+                                <div class="radios_1">
+                                    <div class="radio-input">
+                                        <input type="radio" name="type_require" value="1">
+                                        <span>人材派遣（長期）</span>
+                                    </div>
+                                    <div class="radio-input">
+                                        <input type="radio" name="type_require" value="2">
+                                        <span>人材派遣（短期）</span>
+                                    </div>
+                                    <div class="radio-input">
+                                        <input type="radio" name="type_require" value="3">
+                                        <span>パートタイム派遣</span>
+                                    </div>
+                                    <div class="radio-input">
+                                        <input type="radio" name="type_require" value="4">
+                                        <span>シニア派遣</span>
+                                    </div>
+                                    <div class="radio-input">
+                                        <input type="radio" name="type_require" value="5">
+                                        <span>紹介予定派遣</span>
+                                    </div>
+                                    <div class="radio-input">
+                                        <input type="radio" name="type_require" value="6">
+                                        <span>人材紹介</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="item-radio">
+                                <div class="lable-input label_type_contact">ご都合のよいご返信方法 *</div>
+                                <div class="radios_2">
+                                    <div class="radio-input">
+                                        <input type="radio" name="type_contact" value="1">
+                                        <span>電話</span>
+                                    </div>
+                                    <div class="radio-input">
+                                        <input type="radio" name="type_contact" value="2">
+                                        <span>メール</span>
+                                    </div>
+                                    <div class="radio-input">
+                                        <input type="radio" name="type_contact" value="3">
+                                        <span>どちらでも可</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="item-area">
+                                <div class="lable-input">お問合せ内容詳細(任意)</div>
+                                <div class="input">
+                                    <textarea name="content"></textarea>
+                                </div>
+                            </div>
+                            <button style="outline: none; border: none" class="button-send send"  type="submit">お問合せ内容の送信</button>
+                        </form>
                     </div>
                 </div>
                 <div class="trig-bot"></div>
@@ -582,89 +584,91 @@
                     <img src="./assets/images/title-contact.svg" alt="">
                 </div>
                 <div class="form-contact">
-                    <div class="item-input">
-                        <div class="lable-input">会社名 *</div>
-                        <div class="input">
-                            <input type="text" name="name">
-                        </div>
-                    </div>
-                    <div class="item-input">
-                        <div class="lable-input">ご担当者名 *</div>
-                        <div class="input" >
-                            <input type="text" name="leader" >
-                        </div>
-                    </div>
-                    <div class="item-input">
-                        <div class="lable-input">メールアドレス *</div>
-                        <div class="input">
-                            <input type="text"  name="email" >
-                        </div>
-                    </div>
-                    <div class="item-input">
-                        <div class="lable-input">電話番号 *</div>
-                        <div class="input">
-                            <input type="text" name="phone" >
-                        </div>
-                    </div>
-                    <div class="item-input">
-                        <div class="lable-input">住所 *</div>
-                        <div class="input">
-                            <input type="text" name="address" >
-                        </div>
-                    </div>
-                    <div class="item-radio">
-                        <div class="lable-input">お問い合わせ種別 *</div>
-                        <div class="radios_1">
-                            <div class="radio-input">
-                                <input type="radio" name="type_require" value="1">
-                                <span>人材派遣（長期）</span>
-                            </div>
-                            <div class="radio-input">
-                                <input type="radio" name="type_require" value="2">
-                                <span>人材派遣（短期）</span>
-                            </div>
-                            <div class="radio-input">
-                                <input type="radio" name="type_require" value="3">
-                                <span>パートタイム派遣</span>
-                            </div>
-                            <div class="radio-input">
-                                <input type="radio" name="type_require" value="4">
-                                <span>シニア派遣</span>
-                            </div>
-                            <div class="radio-input">
-                                <input type="radio" name="type_require" value="5">
-                                <span>紹介予定派遣</span>
-                            </div>
-                            <div class="radio-input">
-                                <input type="radio" name="type_require" value="6">
-                                <span>人材紹介</span>
+                    <form class="contactForm" method="post" action="sendMail.php">
+                        <div class="item-input">
+                            <div class="lable-input label_name">会社名 *</div>
+                            <div class="input">
+                                <input type="text" name="name">
                             </div>
                         </div>
-                    </div>
-                    <div class="item-radio">
-                        <div class="lable-input">ご都合のよいご返信方法 *</div>
-                        <div class="radios_2">
-                            <div class="radio-input">
-                                <input type="radio" name="type_contact" value="1">
-                                <span>電話</span>
-                            </div>
-                            <div class="radio-input">
-                                <input type="radio" name="type_contact" value="2">
-                                <span>メール</span>
-                            </div>
-                            <div class="radio-input">
-                                <input type="radio" name="type_contact" value="3">
-                                <span>どちらでも可</span>
+                        <div class="item-input">
+                            <div class="lable-input label_leader">ご担当者名 *</div>
+                            <div class="input" >
+                                <input type="text" name="leader" >
                             </div>
                         </div>
-                    </div>
-                    <div class="item-area">
-                        <div class="lable-input">お問合せ内容詳細(任意)</div>
-                        <div class="input">
-                            <textarea name="content"></textarea>
+                        <div class="item-input">
+                            <div class="lable-input label_email">メールアドレス *</div>
+                            <div class="input">
+                                <input type="text"  name="email" >
+                            </div>
                         </div>
-                    </div>
-                    <button style="outline: none; border: none" class="button-send send"  type="submit">お問合せ内容の送信</button>
+                        <div class="item-input">
+                            <div class="lable-input label_phone">電話番号 *</div>
+                            <div class="input">
+                                <input type="text" name="phone" >
+                            </div>
+                        </div>
+                        <div class="item-input">
+                            <div class="lable-input label_address">住所 *</div>
+                            <div class="input">
+                                <input type="text" name="address" >
+                            </div>
+                        </div>
+                        <div class="item-radio">
+                            <div class="lable-input label_type_require">お問い合わせ種別 *</div>
+                            <div class="radios_1">
+                                <div class="radio-input">
+                                    <input type="radio" name="type_require" value="1">
+                                    <span>人材派遣（長期）</span>
+                                </div>
+                                <div class="radio-input">
+                                    <input type="radio" name="type_require" value="2">
+                                    <span>人材派遣（短期）</span>
+                                </div>
+                                <div class="radio-input">
+                                    <input type="radio" name="type_require" value="3">
+                                    <span>パートタイム派遣</span>
+                                </div>
+                                <div class="radio-input">
+                                    <input type="radio" name="type_require" value="4">
+                                    <span>シニア派遣</span>
+                                </div>
+                                <div class="radio-input">
+                                    <input type="radio" name="type_require" value="5">
+                                    <span>紹介予定派遣</span>
+                                </div>
+                                <div class="radio-input">
+                                    <input type="radio" name="type_require" value="6">
+                                    <span>人材紹介</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="item-radio">
+                            <div class="lable-input label_type_contact">ご都合のよいご返信方法 *</div>
+                            <div class="radios_2">
+                                <div class="radio-input">
+                                    <input type="radio" name="type_contact" value="1">
+                                    <span>電話</span>
+                                </div>
+                                <div class="radio-input">
+                                    <input type="radio" name="type_contact" value="2">
+                                    <span>メール</span>
+                                </div>
+                                <div class="radio-input">
+                                    <input type="radio" name="type_contact" value="3">
+                                    <span>どちらでも可</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="item-area">
+                            <div class="lable-input">お問合せ内容詳細(任意)</div>
+                            <div class="input">
+                                <textarea name="content"></textarea>
+                            </div>
+                        </div>
+                        <button style="outline: none; border: none" class="button-send send"  type="submit">お問合せ内容の送信</button>
+                    </form>
                 </div>
             </div>
             <div class="trig-bot"></div>
@@ -676,18 +680,88 @@
 <script src="./assets/js/jquery.js"></script>
 <script language="JavaScript">
     $(document).ready(function () {
-    $(".accordion-button").on("change", function () {
-    $(".accordion-button").not(this).prop("checked", false);
-    const isChecked = $(this).prop("checked");
-    const content = $(this).closest(".accordion-item_").find(".content");
+        $(".accordion-button").on("change", function () {
+        $(".accordion-button").not(this).prop("checked", false);
+        const isChecked = $(this).prop("checked");
+        const content = $(this).closest(".accordion-item_").find(".content");
 
-    $(".content").removeClass("show");
-    if (isChecked) {
-    content.addClass("show");
-    } else {
-    content.removeClass("show");
-    }
-    });
+        $(".content").removeClass("show");
+        if (isChecked) {
+            content.addClass("show");
+        } else {
+            content.removeClass("show");
+        }
+        });
+
+        $('.contactForm').submit(function(event) {
+            console.log('ok dume')
+            event.preventDefault(); // Prevents the form from submitting by default
+            let flag = true
+            // Perform your form validation here using jQuery selectors and conditions
+            var name = $('input[name="name"]').val();
+            var leader = $('input[name="leader"]').val();
+            var email = $('input[name="email"]').val();
+            var phone = $('input[name="phone"]').val();
+            var address = $('input[name="address"]').val();
+            var type_require = $('input[name="type_require"]:checked').val();
+            var type_contact = $('input[name="type_contact"]:checked').val();
+            if (name === '') {
+                $('input[name="name"]').addClass('input-err')
+                $('.label_name').addClass('input-err')
+                flag = false
+            }
+            if (leader === '') {
+                $('input[name="leader"]').addClass('input-err')
+                $('.label_leader').addClass('input-err')
+                flag = false
+            }
+            if (email === '') {
+                $('input[name="email"]').addClass('input-err')
+                $('.label_email').addClass('input-err')
+                flag = false
+            }
+            if (phone === '') {
+                $('input[name="phone"]').addClass('input-err')
+                $('.label_phone').addClass('input-err')
+                flag = false
+            }
+            if (address === '') {
+                $('input[name="address"]').addClass('input-err')
+                $('.label_address').addClass('input-err')
+                flag = false
+            }
+            if (!type_require) {
+                $('input[name="type_require"]').addClass('input-err')
+                $('.label_type_require').addClass('input-err')
+                flag = false
+            }
+            if (!type_contact) {
+                $('input[name="type_contact"]').addClass('input-err')
+                $('.label_type_contact').addClass('input-err')
+                flag = false
+            }
+            if(!flag){
+                return
+            }
+            // If the form is valid, submit it via AJAX using the jQuery AJAX function
+            $.ajax({
+                url: $(this).attr('action'), // The URL to which the form data will be submitted
+                type: 'POST', // The HTTP method to be used
+                data: $(this).serialize(), // Serializes the form data
+                success: function(response) {
+                    // Handle the response from the server after form submission
+                    console.log(response);
+                }
+            });
+        });
+        $('input').on('input', function(e) {
+            $(this).removeClass('input-err')
+            const nameInput = $(this).attr('name')
+            if (nameInput === 'type_require' || nameInput === 'type_contact'){
+                $('input[name="type_contact"]').removeClass('input-err')
+            }
+             $('.label_'+ nameInput).removeClass('input-err')
+        });
     });
 
 </script>
